@@ -9,7 +9,7 @@ namespace FinancEasy.Utils
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<ContasPagar> ContasPagar { get; set; }
         public DbSet<ContasReceber> ContasReceber { get; set; }
-        public DbSet<ContaBancaria> ContasBancaria { get; set; }
+        public DbSet<ContaBancaria> ContaBancaria { get; set; }
         public DbSet<CategoriaDocumento> CategoriasDocumentos { get; set; }
         public DbSet<MovimentacaoContaBancaria> MovimentacaoContaBancarias { get; set; }
         public DbSet<MovimentacaoContaPagar> MovimentacaoContasPagar { get; set; }

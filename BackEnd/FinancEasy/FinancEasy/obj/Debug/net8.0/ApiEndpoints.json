@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "ContainingType": "FinancEasy.Controllers.ContaBancariaController",
+    "Method": "GetContaBancariasUsuario",
+    "RelativePath": "api/ContaBancaria",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUsuario",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
