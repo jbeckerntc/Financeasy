@@ -16,6 +16,12 @@ namespace FinancEasy.Utils
         public DbSet<MovimentacaoContasReceber> MovimentacaoContasReceber { get; set; }
         public DbSet<TipoMovimentacao> TipoMovimentacaos { get; set; }
 
+        public BancoDeDados(DbContextOptions<BancoDeDados> options)
+            : base(options)
+        {
+
+        }
+
         /*
 
         1. Create (Inserir)
