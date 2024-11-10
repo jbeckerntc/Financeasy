@@ -1,32 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|d:\\faculdade\\financeasy\\backend\\financeasy\\financeasy\\model\\contabancaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|solutionrelative:financeasy\\model\\contabancaria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|d:\\faculdade\\financeasy\\backend\\financeasy\\financeasy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|solutionrelative:financeasy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|d:\\faculdade\\financeasy\\backend\\financeasy\\financeasy\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|solutionrelative:financeasy\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|d:\\faculdade\\financeasy\\backend\\financeasy\\financeasy\\controllers\\contabancariacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|solutionrelative:financeasy\\controllers\\contabancariacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|d:\\faculdade\\financeasy\\backend\\financeasy\\financeasy\\utils\\bancodedados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|solutionrelative:financeasy\\utils\\bancodedados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|d:\\faculdade\\financeasy\\backend\\financeasy\\financeasy\\controllers\\contaspagarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|solutionrelative:financeasy\\controllers\\contaspagarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,97 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ContaBancaria.cs",
-              "DocumentMoniker": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Model\\ContaBancaria.cs",
-              "RelativeDocumentMoniker": "FinancEasy\\Model\\ContaBancaria.cs",
-              "ToolTip": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Model\\ContaBancaria.cs",
-              "RelativeToolTip": "FinancEasy\\Model\\ContaBancaria.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T17:35:08.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BancoDeDados.cs",
-              "DocumentMoniker": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Utils\\BancoDeDados.cs",
-              "RelativeDocumentMoniker": "FinancEasy\\Utils\\BancoDeDados.cs",
-              "ToolTip": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Utils\\BancoDeDados.cs",
-              "RelativeToolTip": "FinancEasy\\Utils\\BancoDeDados.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAAEIAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T17:22:20.596Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ContaBancariaController.cs",
-              "DocumentMoniker": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Controllers\\ContaBancariaController.cs",
-              "RelativeDocumentMoniker": "FinancEasy\\Controllers\\ContaBancariaController.cs",
-              "ToolTip": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Controllers\\ContaBancariaController.cs",
-              "RelativeToolTip": "FinancEasy\\Controllers\\ContaBancariaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T17:15:34.28Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Program.cs",
-              "RelativeDocumentMoniker": "FinancEasy\\Program.cs",
-              "ToolTip": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Program.cs",
-              "RelativeToolTip": "FinancEasy\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T17:15:13.124Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\appsettings.json",
-              "RelativeDocumentMoniker": "FinancEasy\\appsettings.json",
-              "ToolTip": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\appsettings.json",
-              "RelativeToolTip": "FinancEasy\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-10T17:14:53.26Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ContasPagarController.cs",
-              "DocumentMoniker": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Controllers\\ContasPagarController.cs",
-              "RelativeDocumentMoniker": "FinancEasy\\Controllers\\ContasPagarController.cs",
-              "ToolTip": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Controllers\\ContasPagarController.cs",
-              "RelativeToolTip": "FinancEasy\\Controllers\\ContasPagarController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-10T17:15:42.613Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Bookmark",
