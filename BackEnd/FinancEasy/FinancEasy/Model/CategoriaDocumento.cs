@@ -1,7 +1,11 @@
-﻿namespace FinancEasy.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FinancEasy.Model
 {
     public class CategoriaDocumento
     {
+
+        [Key]  // Define a chave primária
         public int IdCategoriaDocumento { get; set; }
         public string Nome { get; set; }
 
