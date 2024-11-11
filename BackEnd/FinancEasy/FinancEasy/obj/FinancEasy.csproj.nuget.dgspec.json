@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\FinancEasy.csproj": {}
+    "D:\\Projetos\\Financeasy\\BackEnd\\FinancEasy\\FinancEasy\\FinancEasy.csproj": {}
   },
   "projects": {
-    "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\FinancEasy.csproj": {
+    "D:\\Projetos\\Financeasy\\BackEnd\\FinancEasy\\FinancEasy\\FinancEasy.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\FinancEasy.csproj",
+        "projectUniqueName": "D:\\Projetos\\Financeasy\\BackEnd\\FinancEasy\\FinancEasy\\FinancEasy.csproj",
         "projectName": "FinancEasy",
-        "projectPath": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\FinancEasy.csproj",
-        "packagesPath": "C:\\Users\\Pedro Visconti\\.nuget\\packages\\",
-        "outputPath": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\obj\\",
+        "projectPath": "D:\\Projetos\\Financeasy\\BackEnd\\FinancEasy\\FinancEasy\\FinancEasy.csproj",
+        "packagesPath": "C:\\Users\\julio\\.nuget\\packages\\",
+        "outputPath": "D:\\Projetos\\Financeasy\\BackEnd\\FinancEasy\\FinancEasy\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Pedro Visconti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\julio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -78,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
