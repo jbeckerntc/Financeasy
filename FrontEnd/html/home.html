@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financeasy</title>
+    <link rel="stylesheet" href="style.css"> 
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="contaBancaria.html"><img src="img/icon-contabancaria.png" class="IconMenu">Contas Bancárias</a></li>
+            <li><a href="#contas-receber"><img src="img/icon-contareceber.png" class="IconMenu">Contas a Receber</a></li>
+            <li><a href="#contas-pagar"><img src="img/icon-contapagar.png" class="IconMenu">Contas a Pagar</a></li>
+            <li>
+                <a href="javascript:void(0);" onclick="MudaImgSeta();">
+                    <img src="img/icons-relatorio.png" class="IconMenu">Relatórios
+                    <img id="setaRelatorio" src="img/icon-setaCima.png" class="SetaMenu">
+                </a>
+                <ul id="menuRelatorios" class="submenu">
+                    <li><a href="#relatorio1">Contas a Pagar em Aberto</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <!-- Aqui você pode adicionar o conteúdo de cada seção -->
+    </div>
+</body>
+</html>

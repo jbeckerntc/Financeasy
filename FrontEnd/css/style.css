@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* CSS da navbar */
+.navbar {
+    background-color: #3c20f5;
+    padding: 8px 0;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilizando os ícones */
+.IconMenu {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.SetaMenu {
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+}
+
+.navbar ul li a:hover {
+    background-color: #4169E1;
+    border-radius: 5px;
+}
+
+
+.submenu {
+    display: none !important; 
+    position: absolute;
+    background-color: #3c20f5;
+    padding: 5px;
+    list-style: none;
+    min-width: 100px;  
+    box-shadow: 0px 5px 10px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.submenu li {
+    padding: 8px 16px;
+}
+
+.submenu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.submenu li a:hover {
+    background-color: #f1f1f1;
+}
+
+.submenu.show {
+    display: block !important;  
+}
