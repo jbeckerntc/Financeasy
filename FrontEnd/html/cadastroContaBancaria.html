@@ -4,43 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financeasy</title>
-    <link rel="stylesheet" href="login.css">
-    <script src="login.js" defer></script>
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/javascript/login.js" defer></script>
+    <script src="/javascript/script.js" defer></script>
 </head>
 <body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/html/home.html"><img src="/img/icon-home.png" class="IconMenu">Inicio</a></li>
+            <li><a href="/html/contaBancaria.html"><img src="/img/icon-contabancaria.png" class="IconMenu">Contas Bancárias</a></li>
+            <li><a href="/html/contaReceber.html"><img src="/img/icon-contareceber.png" class="IconMenu">Contas a Receber</a></li>
+            <li><a href="/html/contaPagar.html"><img src="/img/icon-contapagar.png" class="IconMenu">Contas a Pagar</a></li>
+            <li>
+                <a href="javascript:void(0);" onclick="MudaImgSeta();">
+                    <img src="/img/icons-relatorio.png" class="IconMenu">Relatórios
+                    <img id="setaRelatorio" src="/img/icon-setaCima.png" class="SetaMenu">
+                </a>
+                <ul id="menuRelatorios" class="submenu">
+                    <li><a href="#relatorio1">Contas a Pagar em Aberto</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
     <div class="container">
         <div class="left">
             <div class="cadastro-container">
                 <form class="cadastro-form">
-                    <h2>Efetuar cadastro</h2>
+                    <h2>Cadastro conta bancária</h2>
                     <div class="input-group">
-                        <input type="text" id="usuarioNome" required placeholder="Nome">
+                        <input type="text" id="contaNome" required placeholder="Nome da Conta">
                     </div>
                     <div class="input-group">
-                        <label for="DataNascimento">Data Nascimento</label>
-                        <input type="date" id="usuarioNascimento">
+                        <input type="text" id="contaNumero" placeholder="Número da Conta">
                     </div>
                     <div class="input-group">
-                        <input type="text" id="usuarioCidade" placeholder="Cidade">
-                    </div>
-                    <div class="input-group">
-                        <input type="text" id="usuarioEndereco" placeholder="Endereço">
-                    </div>
-                    <div class="input-group">
-                        <input type="text" id="usuarioEmail" required placeholder="E-mail">
-                    </div>
-                    <div class="input-group">
-                        <input type="password" id="usuarioSenha" required placeholder="Senha">
+                        <input type="text" id="contaAgencia" placeholder="Agência">
                     </div>
                     <button type="submit">Cadastrar</button>
-                    <p class="cadastro-text"> Ja possui cadastro? <a href="index.html">Clique aqui</a></p>
                 </form>  
-            </div>
-        </div>
-        <div class="right">
-            <div class="welcome-text">
-                <h1>Bem-vindo ao Financeasy</h1>
-                <p>Vamos juntos cuidar das suas finanças</p>
             </div>
         </div>
     </div>
