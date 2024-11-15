@@ -1,7 +1,10 @@
-﻿namespace FinancEasy.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FinancEasy.Model
 {
     public class Usuario
     {
+        [Key]  // Define a chave primária
         public int IdUsuario { get; set; }
         public string Nome { get; set; }
         public DateTime DataNascimento { get; set; }
