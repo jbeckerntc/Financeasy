@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "FinancEasy.Controllers.ContaBancariaController",
+    "Method": "GetContaBancariasUsuario",
+    "RelativePath": "api/ContaBancaria",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUsuario",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinancEasy.Controllers.ContaBancariaController",
     "Method": "PostCadastraContaBancaria",
     "RelativePath": "api/ContaBancaria",
     "HttpMethod": "POST",
@@ -34,7 +50,7 @@
   {
     "ContainingType": "FinancEasy.Controllers.ContaBancariaController",
     "Method": "RemoveApagaContaBancaria",
-    "RelativePath": "api/ContaBancaria/{idContaBancaria}",
+    "RelativePath": "api/ContaBancaria",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -42,23 +58,7 @@
       {
         "Name": "idContaBancaria",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FinancEasy.Controllers.ContaBancariaController",
-    "Method": "GetContaBancariasUsuario",
-    "RelativePath": "api/ContaBancaria/{idUsuario}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idUsuario",
-        "Type": "System.Int32",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

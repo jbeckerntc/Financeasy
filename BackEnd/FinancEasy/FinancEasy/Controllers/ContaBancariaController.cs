@@ -25,7 +25,7 @@ namespace FinancEasy.Controllers
         /// <param name="idUsuario">ID do usuário</param>
         /// <returns>Lista de contas bancárias</returns>
 
-        [HttpGet("{idUsuario}")]
+        [HttpGet]
         public IActionResult GetContaBancariasUsuario(int idUsuario)
         {
             // Filtra as contas bancárias do usuário com o ID fornecido
@@ -101,7 +101,7 @@ namespace FinancEasy.Controllers
         /// <param name="idContaBancaria">ID da conta bancária</param>
         /// <returns>Status da operação</returns>
 
-        [HttpDelete("{idContaBancaria}")]
+        [HttpDelete]
         public IActionResult RemoveApagaContaBancaria(int idContaBancaria)
         {
             var conta = _banco.ContaBancaria.FirstOrDefault(c => c.IdContaBancaria == idContaBancaria);
