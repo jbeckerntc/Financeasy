@@ -19,7 +19,13 @@ namespace FinancEasy.Controllers
             _banco = context;
         }
 
-        [HttpGet]
+        /// <summary>
+        /// Obtém todas as contas bancárias de um usuário.
+        /// </summary>
+        /// <param name="idUsuario">ID do usuário</param>
+        /// <returns>Lista de contas bancárias</returns>
+
+        [HttpGet("{idUsuario}")]
         public IActionResult GetContaBancariasUsuario(int idUsuario)
         {
             // Filtra as contas bancárias do usuário com o ID fornecido
@@ -36,6 +42,12 @@ namespace FinancEasy.Controllers
 
         }
 
+        /// <summary>
+        /// Cadastra uma nova conta bancária.
+        /// </summary>
+        /// <param name="contaBancariaDTO">Dados da conta bancária</param>
+        /// <returns>Status da operação</returns>
+        
         [HttpPost]
         public IActionResult PostCadastraContaBancaria(ContaBancariaDTO contaBancariaDTO)
         {
@@ -59,6 +71,12 @@ namespace FinancEasy.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Atualiza os dados de uma conta bancária existente.
+        /// </summary>
+        /// <param name="contaBancariaDTO">Dados atualizados da conta bancária</param>
+        /// <returns>Status da operação</returns>
+
         [HttpPut]
         public IActionResult PutAtualizaContaBancaria(ContaBancariaDTO contaBancariaDTO)
         {
@@ -77,7 +95,13 @@ namespace FinancEasy.Controllers
             return Ok();
         }
 
-        [HttpDelete]
+        /// <summary>
+        /// Remove uma conta bancária.
+        /// </summary>
+        /// <param name="idContaBancaria">ID da conta bancária</param>
+        /// <returns>Status da operação</returns>
+
+        [HttpDelete("{idContaBancaria}")]
         public IActionResult RemoveApagaContaBancaria(int idContaBancaria)
         {
             var conta = _banco.ContaBancaria.FirstOrDefault(c => c.IdContaBancaria == idContaBancaria);

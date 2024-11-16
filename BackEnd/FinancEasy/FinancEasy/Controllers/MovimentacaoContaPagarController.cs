@@ -1,33 +1,50 @@
-﻿using FinancEasy.Utils;
+﻿using FinancEasy.Model;
+using FinancEasy.Utils;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FinancEasy.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     public class MovimentacaoContaPagarController : Controller
     {
         private readonly BancoDeDados _banco;
 
-        // Injetando o contexto do banco de dados
         public MovimentacaoContaPagarController(BancoDeDados context)
         {
             _banco = context;
         }
 
-        [HttpGet]
-        public IActionResult GetMovimentacaoContaPagar(int IdcontaPagar)
+        /// <summary>
+        /// Cadastra uma nova movimentação de conta a pagar.
+        /// </summary>
+        /// <param name="MovimentacaoContaPagarDTO">Objeto com os dados da movimentação.</param>
+        /// <returns>Retorna um código de status HTTP indicando o resultado da operação.</returns>
+
+        [HttpPost]
+        public IActionResult PostCadastrarContaPagar(MovimentacaoContaPagarDTO MovimentacaoContaPagarDTO)
         {
-            // Filtra as contas bancárias do usuário com o ID fornecido
-            var movimentacaos = _banco.MovimentacaoContasPagar
-                .Where(c => c.IdContaPagar == IdcontaPagar) // Assume que ContaBancaria tem a propriedade UsuarioId
-                .ToList();
+            var ultimoId = _banco.MovimentacaoContasPagar
+               .OrderByDescending(c => c.IdMovimentacaoContaPagar)
+               .Select(c => c.IdMovimentacaoContaPagar)
+               .FirstOrDefault();
 
-            if (movimentacaos == null || movimentacaos.Count == 0)
+            var movimentacaoNova = new MovimentacaoContaPagar
             {
-                return NotFound($"Nenhuma movimentacao encontrada para o conta {IdcontaPagar}.");
-            }
+                IdMovimentacaoContaPagar = ultimoId + 1,
+                IdTipoMovimentacao = MovimentacaoContaPagarDTO.IdTipoMovimentacao,
+                IdContaPagar = MovimentacaoContaPagarDTO.IdContaPagar,
+                Valor = MovimentacaoContaPagarDTO.Valor,
+                DataMovimentacao = MovimentacaoContaPagarDTO.DataMovimentacao,
+                Descricao = MovimentacaoContaPagarDTO.Descricao,
 
-            return Ok(movimentacaos);
+            };
 
+            _banco.MovimentacaoContasPagar.Add(movimentacaoNova);
+            _banco.SaveChanges();
+
+            return Ok();
         }
+
     }
 }
