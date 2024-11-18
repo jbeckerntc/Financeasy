@@ -24,7 +24,7 @@ namespace FinancEasy.Controllers
         [HttpPost]
         public IActionResult PostCadastrarContaPagar(MovimentacaoContaPagarDTO MovimentacaoContaPagarDTO)
         {
-            var ultimoId = _banco.MovimentacaoContasPagar
+            var ultimoId = _banco.MovimentacaoContaPagar
                .OrderByDescending(c => c.IdMovimentacaoContaPagar)
                .Select(c => c.IdMovimentacaoContaPagar)
                .FirstOrDefault();
@@ -40,7 +40,7 @@ namespace FinancEasy.Controllers
 
             };
 
-            _banco.MovimentacaoContasPagar.Add(movimentacaoNova);
+            _banco.MovimentacaoContaPagar.Add(movimentacaoNova);
             _banco.SaveChanges();
 
             return Ok();
