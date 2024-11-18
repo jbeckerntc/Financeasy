@@ -15,9 +15,13 @@ namespace FinancEasy.Model
         public string Descricao { get; set; }
 
         [ForeignKey("IdTipoMovimentacao")]
+        [JsonIgnore]
+
         public TipoMovimentacao TipoMovimentacao { get; set; }
 
         [ForeignKey("IdContaPagar")]
+        [JsonIgnore]
+
         public ContasPagar ContaPagar { get; set; }
     }
 }
