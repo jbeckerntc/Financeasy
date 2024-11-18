@@ -23,7 +23,7 @@ namespace FinancEasy.Controllers
         /// <param name="idUsuario">ID do usuário.</param>
         /// <returns>Lista de contas a pagar do usuário.</returns>
 
-        [HttpGet("{idUsuario}")]
+        [HttpGet]
         public IActionResult GetContaPagarUsuarioAll(int idUsuario)
         {
             var contasPagar = _banco.ContasPagar
@@ -145,7 +145,7 @@ namespace FinancEasy.Controllers
 
             }
 
-            var movimentacaoContasPagar = _banco.MovimentacaoContasPagar
+            var movimentacaoContasPagar = _banco.MovimentacaoContaPagar
             .Where(c => c.IdContaPagar == idContaPagar)
             .ToList();
 

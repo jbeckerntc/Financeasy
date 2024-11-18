@@ -65,6 +65,22 @@
   },
   {
     "ContainingType": "FinancEasy.Controllers.ContasPagarController",
+    "Method": "GetContaPagarUsuarioAll",
+    "RelativePath": "api/ContasPagar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUsuario",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinancEasy.Controllers.ContasPagarController",
     "Method": "PostCadastrarContaPagar",
     "RelativePath": "api/ContasPagar",
     "HttpMethod": "POST",
@@ -121,22 +137,6 @@
     "Parameters": [
       {
         "Name": "idContaPagar",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "FinancEasy.Controllers.ContasPagarController",
-    "Method": "GetContaPagarUsuarioAll",
-    "RelativePath": "api/ContasPagar/{idUsuario}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "idUsuario",
         "Type": "System.Int32",
         "IsRequired": true
       }
