@@ -83,7 +83,7 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #f1f1f1; 
 }
-.editarConta{
+#editarConta{
     padding: 8px 12px;
     background-color: #06b12e;
     color: white;
@@ -91,7 +91,7 @@ tr:hover {
     border-radius: 5px;
     cursor: pointer;
 }
-.excluirConta{
+#excluirConta{
     padding: 8px 12px;
     background-color: #ff0000;
     color: white;
@@ -100,10 +100,10 @@ tr:hover {
     cursor: pointer;
 }
 
-.excluirConta:hover {
+#excluirConta:hover {
     background-color: #801d1d;
 }
-.editarConta:hover {
+#editarConta:hover {
     background-color: #04691b;
 }
 
