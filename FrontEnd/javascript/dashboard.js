@@ -2,24 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Função para carregar os dados da API
     async function fetchData() {
         try {
-        //     // URLs das APIs
-        //     const urlContasPagar = 'https://api.exemplo.com/contas-pagar';
-        //     const urlContasReceber = 'https://api.exemplo.com/contas-receber';
-
-        //     // Fazendo as requisições às APIs
-        //     const [contasPagarRes, contasReceberRes] = await Promise.all([
-        //         fetch(urlContasPagar),
-        //         fetch(urlContasReceber),
-        //     ]);
-
-        //     // Verificando se as respostas são válidas
-        //     if (!contasPagarRes.ok || !contasReceberRes.ok) {
-        //         throw new Error('Falha ao carregar dados da API');
-        //     }
-
             // Processando os dados JSON
             const contasPagarData = { valor: 5000.25 };
-            const contasReceberData = { valor: 1300.25 };
+            const contasReceberData = { valor: 7300.25 };
             // Atualizando os valores no dashboard
             document.getElementById('contasPagarValue').innerText = `R$ ${contasPagarData.valor}`;
             document.getElementById('contasReceberValue').innerText = `R$ ${contasReceberData.valor}`;

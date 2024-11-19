@@ -1,26 +1,27 @@
 // Função para buscar as contas bancárias da API
 async function getContasBancarias() {
     try {
-        const response = await fetch('https://api.exemplo.com/contas-bancarias');
+        const response = await fetch('https://localhost:7002/api/ContaBancaria?idUsuario=1');
         const data = await response.json();
 
         const contasBancariasTable = document.querySelector('#contas_bancarias tbody');
-        contasBancariasTable.innerHTML = ''; // Limpa as linhas da tabela antes de preencher
+        contasBancariasTable.innerHTML = ''; 
 
-        // Preenche a tabela com os dados das contas bancárias
-        data.contas.forEach(conta => {
-            const row = document.createElement('tr'); // Cria uma nova linha
+        console.log(data);  
 
-            // Cria as células da linha (td) e insere os dados
+        
+        data.$values.forEach(conta => {  
+            const row = document.createElement('tr'); 
             row.innerHTML = `
-                <td>${conta.banco}</td>
                 <td>${conta.nome}</td>
-                <td>${conta.numero}</td>
                 <td>${conta.agencia}</td>
-                <td><button onclick="editarConta(${conta.id})">Editar</button> <button onclick="excluirConta(${conta.id})">Excluir</button></td>
+                <td>${conta.conta}</td>
+                <td>
+                    <button id='editarConta' onclick="editarConta(${conta.idContaBancaria}, '${conta.nome}', '${conta.conta}', '${conta.agencia}')">Editar</button>
+                    <button id='excluirConta' onclick="excluirConta(${conta.idContaBancaria})">Excluir</button>
+                </td>
             `;
 
-            // Adiciona a linha à tabela
             contasBancariasTable.appendChild(row);
         });
     } catch (error) {
@@ -28,14 +29,49 @@ async function getContasBancarias() {
     }
 }
 
-// Chama a função para preencher a tabela assim que a página for carregada
 document.addEventListener('DOMContentLoaded', getContasBancarias);
 
-// Exemplo de funções de edição e exclusão
-function editarConta(id) {
-    alert(`Editar conta de ID: ${id}`);
+function editarConta(idContaBancaria) {
+    alert(`Editar conta de ID: ${idContaBancaria}`);
 }
 
-function excluirConta(id) {
-    alert(`Excluir conta de ID: ${id}`);
+async function excluirConta(idContaBancaria) {
+    alert(`Excluindo conta de ID: ${idContaBancaria}`);
+    try {
+        const url = `https://localhost:7002/api/ContaBancaria?idContaBancaria=${idContaBancaria}`;
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const responseText = await response.text();
+
+        if (response.ok) {
+            alert('Conta bancária excluída com sucesso!');
+            getContasBancarias();
+        } else {
+            try {
+                const errorData = JSON.parse(responseText);
+                alert('Erro ao excluir conta bancária: ' + (errorData.message || 'Erro desconhecido'));
+            } catch (jsonError) {
+                alert('Erro ao excluir conta bancária: ' + responseText);
+            }
+        }
+    } catch (error) {
+        console.error('Erro ao fazer a requisição:', error);
+        alert('Ocorreu um erro ao tentar excluir a conta bancária.');
+    }
+}
+
+function editarConta(idContaBancaria, nome, conta, agencia) {
+    // Armazena os dados da conta no localStorage
+    localStorage.setItem('contaId', idContaBancaria);
+    localStorage.setItem('contaNome', nome);
+    localStorage.setItem('contaNumero', conta);
+    localStorage.setItem('contaAgencia', agencia);
+    
+    // Redireciona para a página de cadastro
+    window.location.href = '/html/cadastroContaBancaria.html';
 }
