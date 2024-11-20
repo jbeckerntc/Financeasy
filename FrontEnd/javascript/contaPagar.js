@@ -1,3 +1,6 @@
+// Chama a função quando o conteúdo da página for carregado
+document.addEventListener('DOMContentLoaded', getContasPagar);
+
 async function getContasPagar() {
     try {
         // Requisição para a API
@@ -28,8 +31,8 @@ async function getContasPagar() {
                     <td>${conta.descricao || 'Sem descrição'}</td>
                     <td>${valor}</td>
                     <td>
-                        <button id='editarContaPagar' onclick="editarConta(${conta.idContasPagar}, '${conta.numero}', '${dataAbertura}', '${dataVencimento}', '${conta.descricao}', ${conta.valor})">Editar</button>
-                        <button id='excluirContaPagar' onclick="excluirConta(${conta.idContasPagar})">Excluir</button>
+                        <button id='editarContaPagar' onclick="editarContaPagar(${conta.idContasPagar}, '${conta.numero}', '${dataAbertura}', '${dataVencimento}', '${conta.descricao}', ${conta.valor})">Editar</button>
+                        <button id='excluirContaPagar' onclick="excluirContaPagar(${conta.idContasPagar})">Excluir</button>
                     </td>
                 `;
 
@@ -41,5 +44,86 @@ async function getContasPagar() {
     }
 }
 
-// Chama a função quando o conteúdo da página for carregado
-document.addEventListener('DOMContentLoaded', getContasPagar);
+
+async function excluirContaPagar(idContasPagar) {
+    alert(`Excluindo conta de ID: ${idContasPagar}`);
+    try {
+        const url = `https://localhost:7002/api/ContasPagar/${idContasPagar}`;
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const responseText = await response.text();
+
+        if (response.ok) {
+            alert('Conta bancária excluída com sucesso!');
+            getContasPagar();
+        } else {
+            try {
+                const errorData = JSON.parse(responseText);
+                alert('Erro ao excluir conta bancária: ' + (errorData.message || 'Erro desconhecido'));
+            } catch (jsonError) {
+                alert('Erro ao excluir conta bancária: ' + responseText);
+            }
+        }
+    } catch (error) {
+        console.error('Erro ao fazer a requisição:', error);
+        alert('Ocorreu um erro ao tentar excluir a conta bancária.');
+    }
+}
+
+// Função para cadastrar a conta a pagar
+async function cadastrarContaPagar(event) {
+    event.preventDefault(); 
+
+    const nomeConta = document.getElementById("contaPagarNome").value;
+    const numeroConta = document.getElementById("contaPagarNumero").value;
+    const categoria = document.getElementById("contaPagarCategoria").value;
+    const dataAbertura = document.getElementById("DataAberturaConta").value;
+    const dataVencimento = document.getElementById("DataVencimentoConta").value;
+    const descricao = document.getElementById("contaPagarDescricao").value;
+    const valor = parseFloat(document.getElementById("contaPagarValor").value);
+
+    if (!nomeConta || !numeroConta || !dataAbertura || !dataVencimento || !descricao || isNaN(valor) || valor <= 0) {
+        alert("Por favor, preencha todos os campos corretamente.");
+        return;
+    }
+    const conta = {
+        idContasPagar: 0,
+        idCategoriaDocumento: categoria,
+        idUsuario: 1,
+        numero: numeroConta,
+        dataVencimento: dataVencimento,
+        dataAbertura:dataAbertura ,
+        descricao: descricao,
+        valor: valor
+     };
+
+    console.log(conta);
+    try {
+        // Enviando os dados para a API usando fetch
+        const response = await fetch('https://localhost:7002/api/ContasPagar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json', 
+            },
+            body: JSON.stringify(conta) 
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao cadastrar a conta a pagar');
+        }
+
+        const result = await response.json(); 
+        console.log('Conta cadastrada com sucesso:', result);
+        document.querySelector(".cadastro-form").reset();
+
+        alert("Conta a pagar cadastrada com sucesso!");
+    } catch (error) {
+        console.error("Erro ao cadastrar conta:", error);
+        alert("Ocorreu um erro ao cadastrar a conta. Tente novamente.");
+    }
+}
