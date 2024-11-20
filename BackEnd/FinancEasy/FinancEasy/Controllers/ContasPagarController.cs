@@ -101,7 +101,7 @@ namespace FinancEasy.Controllers
             _banco.ContasPagar.Add(contaPagarNova);
             _banco.SaveChanges();
 
-            return Ok($"Conta id {idContaPagar} cadastrada com sucesso");
+            return Ok(new {mensagem = $"Conta id {idContaPagar} cadastrada com sucesso"});
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace FinancEasy.Controllers
 
             _banco.SaveChanges();
 
-            return Ok($"Conta {contaPagarDTO.IdContasPagar} alterada com sucesso");
+            return Ok(new {mensagem = $"Conta {contaPagarDTO.IdContasPagar} alterada com sucesso" });
         }
 
         /// <summary>
