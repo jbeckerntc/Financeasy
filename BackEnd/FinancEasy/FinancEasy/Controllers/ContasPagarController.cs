@@ -83,9 +83,12 @@ namespace FinancEasy.Controllers
                .Select(c => c.IdContasPagar)
                .FirstOrDefault();
 
+            int idContaPagar = ultimoId + 1;
+
+
             var contaPagarNova = new ContasPagar
             {
-                IdContasPagar = ultimoId + 1,
+                IdContasPagar = idContaPagar,
                 IdCategoriaDocumento = contaPagarDTO.IdCategoriaDocumento,
                 IdUsuario = contaPagarDTO.IdUsuario,
                 Numero = contaPagarDTO.Numero,
@@ -98,7 +101,7 @@ namespace FinancEasy.Controllers
             _banco.ContasPagar.Add(contaPagarNova);
             _banco.SaveChanges();
 
-            return Ok();
+            return Ok($"Conta id {idContaPagar} cadastrada com sucesso");
         }
 
         /// <summary>
@@ -123,7 +126,7 @@ namespace FinancEasy.Controllers
 
             _banco.SaveChanges();
 
-            return Ok();
+            return Ok($"Conta {contaPagarDTO.IdContasPagar} alterada com sucesso");
         }
 
         /// <summary>
@@ -140,19 +143,18 @@ namespace FinancEasy.Controllers
             {
                 return NotFound("Conta a pagar não encontrada");
             }
-            else
-            {
 
-            }
-
-            var movimentacaoContasPagar = _banco.MovimentacaoContaPagar
+            List<MovimentacaoContaPagar> movimentacaoContasPagar = _banco.MovimentacaoContaPagar
             .Where(c => c.IdContaPagar == idContaPagar)
             .ToList();
 
             try
             {
 
-                _banco.Remove(movimentacaoContasPagar);
+                foreach (var movimentacao in movimentacaoContasPagar)
+                {
+                    _banco.Remove(movimentacao);
+                }
                 _banco.Remove(contaPagar);
                 _banco.SaveChanges();
 

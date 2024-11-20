@@ -85,7 +85,7 @@ tr:hover {
 }
 #editarContaPagar{
     padding: 8px 12px;
-    background-color: #06b12e;
+    background-color: #3c20f5;
     color: white;
     border: none;
     border-radius: 5px;
@@ -93,7 +93,7 @@ tr:hover {
 }
 #excluirContaPagar{
     padding: 8px 12px;
-    background-color: #ff0000;
+    background-color: #3c20f5;
     color: white;
     border: none;
     border-radius: 5px;
