@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace FinancEasy.Model
 {
@@ -9,7 +10,10 @@ namespace FinancEasy.Model
         public int IdCategoriaDocumento { get; set; }
         public string Nome { get; set; }
 
+        [JsonIgnore]
         public ICollection<ContasPagar> ContasPagar { get; set; }
+
+        [JsonIgnore]
         public ICollection<ContasReceber> ContasReceber { get; set; }
     }
 }

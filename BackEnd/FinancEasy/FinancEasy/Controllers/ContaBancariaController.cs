@@ -2,6 +2,7 @@
 using FinancEasy.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace FinancEasy.Controllers
@@ -10,19 +11,25 @@ namespace FinancEasy.Controllers
     [Route("api/[controller]")]
     public class ContaBancariaController : Controller
     {
-        private readonly BancoDeDados _context;
+        private readonly BancoDeDados _banco;
 
         // Injetando o contexto do banco de dados
         public ContaBancariaController(BancoDeDados context)
         {
-            _context = context;
+            _banco = context;
         }
+
+        /// <summary>
+        /// Obtém todas as contas bancárias de um usuário.
+        /// </summary>
+        /// <param name="idUsuario">ID do usuário</param>
+        /// <returns>Lista de contas bancárias</returns>
 
         [HttpGet]
         public IActionResult GetContaBancariasUsuario(int idUsuario)
         {
             // Filtra as contas bancárias do usuário com o ID fornecido
-            var contas = _context.ContaBancaria
+            var contas = _banco.ContaBancaria
                 .Where(c => c.IdUsuario == idUsuario) // Assume que ContaBancaria tem a propriedade UsuarioId
                 .ToList();
 
@@ -35,25 +42,98 @@ namespace FinancEasy.Controllers
 
         }
 
-        /*
-         Exemplo select contas bancarias
-
-        using (var context = new AppDbContext())
+        /// <summary>
+        /// Cadastra uma nova conta bancária.
+        /// </summary>
+        /// <param name="contaBancariaDTO">Dados da conta bancária</param>
+        /// <returns>Status da operação</returns>
+        
+        [HttpPost]
+        public IActionResult PostCadastraContaBancaria(ContaBancariaDTO contaBancariaDTO)
         {
-            // Carregando a conta bancária com suas movimentações
-            var contaBancaria = context.ContaBancarias
-                .Include(c => c.Movimentacoes) // Incluindo as movimentações associadas, faz com que o Entity Framework carregue não só os dados da ContaBancaria, mas também as Movimentacoes associadas a essa conta, que estão relacionadas de forma 1
-                .FirstOrDefault(c => c.IdContaBancaria == 1); // Filtrando pela conta bancária com Id 1
+            var ultimoId = _banco.ContaBancaria
+                       .OrderByDescending(c => c.IdContaBancaria)
+                       .Select(c => c.IdContaBancaria)
+                       .FirstOrDefault();
 
-            if (contaBancaria != null)
+            var contaBancariaNova = new ContaBancaria
+            {  
+                IdContaBancaria = ultimoId + 1,
+                IdUsuario = contaBancariaDTO.IdUsuario,
+                Nome = contaBancariaDTO.Nome,
+                Agencia = contaBancariaDTO.Agencia,
+                Conta = contaBancariaDTO.Conta
+            };
+
+            _banco.ContaBancaria.Add(contaBancariaNova);
+            _banco.SaveChanges();
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// Atualiza os dados de uma conta bancária existente.
+        /// </summary>
+        /// <param name="contaBancariaDTO">Dados atualizados da conta bancária</param>
+        /// <returns>Status da operação</returns>
+
+        [HttpPut]
+        public IActionResult PutAtualizaContaBancaria(ContaBancariaDTO contaBancariaDTO)
+        {
+            var contaExistente = _banco.ContaBancaria.FirstOrDefault(c => c.IdContaBancaria == contaBancariaDTO.IdContaBancaria);
+            if (contaExistente == null)
             {
-                Console.WriteLine($"Conta Bancária: {contaBancaria.Nome} - Agência: {contaBancaria.Agencia}");
-                foreach (var movimentacao in contaBancaria.Movimentacoes)
+                return NotFound("Conta bancária não encontrada.");
+            }
+
+            contaExistente.Nome = contaBancariaDTO.Nome;
+            contaExistente.Agencia = contaBancariaDTO.Agencia;
+            contaExistente.Conta = contaBancariaDTO.Conta;
+
+            _banco.SaveChanges();
+
+            return Ok();
+        }
+
+        /// <summary>
+        /// Remove uma conta bancária.
+        /// </summary>
+        /// <param name="idContaBancaria">ID da conta bancária</param>
+        /// <returns>Status da operação</returns>
+
+        [HttpDelete]
+        public IActionResult RemoveApagaContaBancaria(int idContaBancaria)
+        {
+            var conta = _banco.ContaBancaria.FirstOrDefault(c => c.IdContaBancaria == idContaBancaria);
+            if (conta == null)
+            {
+                return NotFound("Conta não encontrada");
+            }
+
+            try
+            {
+                _banco.Remove(conta);
+                _banco.SaveChanges();
+
+                return Ok("Conta bancária excluída com sucesso.");
+            }
+            catch (DbUpdateException dbEx)
+            {
+                // Verifica se a exceção é relacionada a chave estrangeira
+                if (dbEx.InnerException != null && dbEx.InnerException.Message.Contains("FOREIGN KEY"))
                 {
-                    Console.WriteLine($"Movimentação: {movimentacao.Valor} - Data: {movimentacao.DataMovimentacao}");
+                    return BadRequest("Não é possível excluir a conta bancária porque ela está sendo usada em outros registros.");
                 }
+
+                // Caso seja outro erro, retornar uma mensagem genérica
+                return StatusCode(500, "Ocorreu um erro ao tentar excluir a conta bancária.");
+            }
+            catch (Exception ex)
+            {
+                // Capturar qualquer outro tipo de exceção
+                return StatusCode(500, $"Erro inesperado: {ex.Message}");
             }
         }
-         */
+
     }
 }

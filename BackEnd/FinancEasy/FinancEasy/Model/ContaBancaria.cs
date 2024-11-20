@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FinancEasy.Model
 {
@@ -13,9 +14,13 @@ namespace FinancEasy.Model
         public string Conta { get; set; }
 
         [ForeignKey("IdUsuario")]
+        [JsonIgnore]
+
         public Usuario Usuario { get; set; }
 
         // Relacionamento 1:N (Uma ContaBancaria pode ter muitas movimentacoes)
+        [JsonIgnore]
+
         public ICollection<MovimentacaoContaBancaria> Movimentacoes { get; set; }
     }
 }

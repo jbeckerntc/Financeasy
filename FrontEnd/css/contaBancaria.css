@@ -37,7 +37,7 @@
     flex-direction: column; 
     align-items: stretch;
     justify-content: center; 
-    background-color: #f8f8f8; 
+    background-color: #e7e7e7;
     padding: 20px; 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
@@ -83,7 +83,7 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #f1f1f1; 
 }
-.editarConta{
+#editarConta{
     padding: 8px 12px;
     background-color: #06b12e;
     color: white;
@@ -91,7 +91,7 @@ tr:hover {
     border-radius: 5px;
     cursor: pointer;
 }
-.excluirConta{
+#excluirConta{
     padding: 8px 12px;
     background-color: #ff0000;
     color: white;
@@ -100,10 +100,10 @@ tr:hover {
     cursor: pointer;
 }
 
-.excluirConta:hover {
+#excluirConta:hover {
     background-color: #801d1d;
 }
-.editarConta:hover {
+#editarConta:hover {
     background-color: #04691b;
 }
 

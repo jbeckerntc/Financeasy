@@ -6,15 +6,15 @@ namespace FinancEasy.Utils
     public class BancoDeDados : DbContext
     {
 
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<ContasPagar> ContasPagar { get; set; }
         public DbSet<ContasReceber> ContasReceber { get; set; }
         public DbSet<ContaBancaria> ContaBancaria { get; set; }
-        public DbSet<CategoriaDocumento> CategoriasDocumentos { get; set; }
-        public DbSet<MovimentacaoContaBancaria> MovimentacaoContaBancarias { get; set; }
-        public DbSet<MovimentacaoContaPagar> MovimentacaoContasPagar { get; set; }
+        public DbSet<CategoriaDocumento> CategoriaDocumento { get; set; }
+        public DbSet<MovimentacaoContaBancaria> MovimentacaoContaBancaria { get; set; }
+        public DbSet<MovimentacaoContaPagar> MovimentacaoContaPagar { get; set; }
         public DbSet<MovimentacaoContasReceber> MovimentacaoContasReceber { get; set; }
-        public DbSet<TipoMovimentacao> TipoMovimentacaos { get; set; }
+        public DbSet<TipoMovimentacao> TipoMovimentacao { get; set; }
 
         public BancoDeDados(DbContextOptions<BancoDeDados> options)
             : base(options)

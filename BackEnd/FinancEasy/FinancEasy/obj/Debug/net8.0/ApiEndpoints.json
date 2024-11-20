@@ -14,5 +14,149 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinancEasy.Controllers.ContaBancariaController",
+    "Method": "PostCadastraContaBancaria",
+    "RelativePath": "api/ContaBancaria",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contaBancariaDTO",
+        "Type": "FinancEasy.Model.ContaBancariaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinancEasy.Controllers.ContaBancariaController",
+    "Method": "PutAtualizaContaBancaria",
+    "RelativePath": "api/ContaBancaria",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contaBancariaDTO",
+        "Type": "FinancEasy.Model.ContaBancariaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinancEasy.Controllers.ContaBancariaController",
+    "Method": "RemoveApagaContaBancaria",
+    "RelativePath": "api/ContaBancaria",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idContaBancaria",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinancEasy.Controllers.ContasPagarController",
+    "Method": "GetContaPagarUsuarioAll",
+    "RelativePath": "api/ContasPagar",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idUsuario",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinancEasy.Controllers.ContasPagarController",
+    "Method": "PostCadastrarContaPagar",
+    "RelativePath": "api/ContasPagar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contaPagarDTO",
+        "Type": "FinancEasy.Model.ContaPagarDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinancEasy.Controllers.ContasPagarController",
+    "Method": "PutAtualizaContaPagar",
+    "RelativePath": "api/ContasPagar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "contaPagarDTO",
+        "Type": "FinancEasy.Model.ContaPagarDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinancEasy.Controllers.ContasPagarController",
+    "Method": "GetContaPagar",
+    "RelativePath": "api/ContasPagar/{idContaPagar}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idContaPagar",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinancEasy.Controllers.ContasPagarController",
+    "Method": "RemoveApagaContaPagar",
+    "RelativePath": "api/ContasPagar/{idContaPagar}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idContaPagar",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "FinancEasy.Controllers.MovimentacaoContaPagarController",
+    "Method": "PostCadastrarContaPagar",
+    "RelativePath": "api/MovimentacaoContaPagar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "MovimentacaoContaPagarDTO",
+        "Type": "FinancEasy.Model.MovimentacaoContaPagarDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

@@ -1,0 +1,109 @@
+.cabecalhoContaPagar{
+    max-width: 1400px;
+    margin: 50px auto; 
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    align-items: center;
+}
+
+.cabecalhoContaPagar button{
+    padding: 10px 15px;
+    background-color: #3c20f5;
+    border: none;
+    border-radius: 5px;
+}
+.cabecalhoContaPagar button:hover{
+    padding: 10px 15px;
+    background-color: #4169E1;
+    border: none;
+    border-radius: 5px;
+}
+.cabecalhoContaPagar button a{
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+}
+.cabecalhoContaPagar h2{
+    font-weight: bold;
+}
+
+.listaContas{
+    max-width: 1400px;
+    margin: 50px auto; 
+    display: flex;
+    flex-direction: column; 
+    align-items: stretch;
+    justify-content: center; 
+    background-color: #e7e7e7;
+    padding: 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.cabecalho h3 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+
+/* Estilizando a tabela */
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px;
+    background-color: #fff; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+th {
+    background-color: #3c20f5; 
+    color: white; 
+    padding: 12px 15px; 
+    font-weight: bold; 
+}
+
+/* Estilizando as células da tabela */
+td {
+    padding: 12px 15px; 
+    border-bottom: 1px solid #ddd; 
+    text-align: center; 
+    font-weight: bold;
+}
+
+/* Estilo para as linhas da tabela */
+tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+tr:hover {
+    background-color: #f1f1f1; 
+}
+#editarContaPagar{
+    padding: 8px 12px;
+    background-color: #06b12e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#excluirContaPagar{
+    padding: 8px 12px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#excluirContaPagar:hover {
+    background-color: #801d1d;
+}
+#editarContaPagar:hover {
+    background-color: #04691b;
+}
+

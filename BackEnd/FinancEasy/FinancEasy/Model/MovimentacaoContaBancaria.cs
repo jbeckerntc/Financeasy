@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace FinancEasy.Model
 {
@@ -14,6 +15,8 @@ namespace FinancEasy.Model
         public int Tipo { get; set; }
 
         [ForeignKey("IdContaBancaria")]
+        [JsonIgnore]
+
         public ContaBancaria ContaBancaria { get; set; }
     }
 }
