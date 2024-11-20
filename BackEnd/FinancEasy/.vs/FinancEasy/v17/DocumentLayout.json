@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|d:\\faculdade\\financeasy\\backend\\financeasy\\financeasy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|solutionrelative:financeasy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|d:\\faculdade\\financeasy\\backend\\financeasy\\financeasy\\controllers\\contaspagarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92B5BAAE-D87D-4A02-9326-64F63C989A11}|FinancEasy\\FinancEasy.csproj|solutionrelative:financeasy\\controllers\\contaspagarcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Program.cs",
+              "RelativeDocumentMoniker": "FinancEasy\\Program.cs",
+              "ToolTip": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Program.cs",
+              "RelativeToolTip": "FinancEasy\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAB2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-20T16:25:25.034Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
@@ -33,18 +50,14 @@
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ContasPagarController.cs",
               "DocumentMoniker": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Controllers\\ContasPagarController.cs",
               "RelativeDocumentMoniker": "FinancEasy\\Controllers\\ContasPagarController.cs",
               "ToolTip": "D:\\Faculdade\\FinancEasy\\BackEnd\\FinancEasy\\FinancEasy\\Controllers\\ContasPagarController.cs",
               "RelativeToolTip": "FinancEasy\\Controllers\\ContasPagarController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAowKUAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAADgvyQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-20T15:12:29.953Z",
               "EditorCaption": ""
