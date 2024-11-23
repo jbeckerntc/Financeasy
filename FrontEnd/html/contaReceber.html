@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Financeasy</title>
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/contaBancaria.css">
+    <link rel="stylesheet" href="/css/contasPagar.css">
     <script src="/javascript/script.js" defer></script>
-    <script src="/javascript/contaBancaria.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
         <ul>
             <li><a href="/html/home.html"><img src="/img/icon-home.png" class="IconMenu">Inicio</a></li>
-            <li><a href="/html/movimentacao.html"><img src="/img/icon-movimentacao.png" class="IconMenu">Movimentações Bancárias</a></li>
             <li><a href="/html/categoria.html"><img src="/img/icon-categoria.png" class="IconMenu">Categorias Documentos</a></li>
             <li><a href="/html/contaBancaria.html"><img src="/img/icon-contabancaria.png" class="IconMenu">Contas Bancárias</a></li>
             <li><a href="/html/contaReceber.html"><img src="/img/icon-contareceber.png" class="IconMenu">Contas a Receber</a></li>
@@ -29,3 +27,56 @@
             </li>            
         </ul>
     </nav>
+
+    <div class="cabecalhoContaPagar">
+        <button><a href="">Cadastrar Conta a Receber</a></button>
+    </div>
+
+    <div class="listaContas">
+        <div class="cabecalho">
+            <h3>Contas a Receber</h3>
+        </div>
+        <div>
+            <table id="conta_pagar">
+                <thead>
+                    <tr>
+                        <th>Número da Conta Pagar</th>
+                        <th>Categoria</th>
+                        <th>Data Abertura</th>
+                        <th>Data Vencimento</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>112233</td>
+                        <td>Salário</td>
+                        <td>15/11/2024</td>
+                        <td>15/12/2024</td>
+                        <td>Salário de novembro</td>
+                        <td>3000.00</td>
+                        <td>
+                            <button id='editar'>Editar</button>
+                            <button id='excluir'>Excluir</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>445566</td>
+                        <td>Parcela Decimo terceiro</td>
+                        <td>30/11/2024</td>
+                        <td>30/12/2024</td>
+                        <td>Primeira parcela do decimo terceiro salario</td>
+                        <td>1500.00</td>
+                        <td>
+                            <button id='editar'>Editar</button>
+                            <button id='excluir'>Excluir</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
