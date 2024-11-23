@@ -83,27 +83,45 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #f1f1f1; 
 }
-#editarConta{
-    padding: 8px 12px;
-    background-color: #3c20f5;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-#excluirConta{
-    padding: 8px 12px;
-    background-color: #3c20f5;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+/* Estilo do submenuAcoes */
+.subMenuAcoes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; 
+    position: absolute; 
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 5px;
+    z-index: 10;
 }
 
-#excluirConta:hover {
+.subMenuAcoes button {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 8px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+}
+
+.subMenuAcoes button:hover {
+    background-color: #3c20f5;
+    color: white;
+}
+
+#EstornarMovimentacao{
+    padding: 8px 12px;
+    background-color: #3c20f5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#EstornarMovimentacao:hover {
     background-color: #801d1d;
 }
-#editarConta:hover {
-    background-color: #04691b;
-}
-
