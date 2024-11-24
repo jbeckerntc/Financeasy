@@ -75,22 +75,22 @@ async function lancarMovimentacao(event) {
 
     // Capturar os dados do formulário
     const idContasPagar = contaPagarId
-    const valorDaConta = contaValor
     const valor = document.getElementById('valorLancamentoConta').value;
     const data = document.getElementById('dataLancamentoConta').value;
     const tipo = document.getElementById('tipoLancamentoConta').value;
     const descricao = document.getElementById('descricaoLancamentoConta').value;
+
 
     // Criar o objeto de dados a ser enviado para a API
     const movimentacao = {
         idMovimentacaoContaPagar: 0,
         idContaPagar: idContasPagar,
         valor: parseFloat(valor), // Converter para número
-        dataLancamento: data,
+        dataMovimentacao: data,
         idTipoMovimentacao: parseInt(tipo), // Converter para número
         descricao: descricao
     };
-
+        console.log(movimentacao);
     try {
         // Realizar o POST para a API
         const response = await fetch('https://localhost:7002/api/MovimentacaoContaPagar', {

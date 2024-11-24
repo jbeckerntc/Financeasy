@@ -58,8 +58,12 @@
                         <td>Salário de novembro</td>
                         <td>3000.00</td>
                         <td>
-                            <button id='editar'>Editar</button>
-                            <button id='excluir'>Excluir</button>
+                            <img src="/img/icon-acoes.png" class="IconMenuAcoes" onclick="toggleSubmenu(event)">
+                            <ul class="subMenuAcoes" style="display: none;">
+                                <button>Lançar Movimentação</button>
+                                <button id='editarContaPagar'>Editar</button>
+                                <button id='excluirContaPagar'>Excluir</button>
+                            </ul>
                         </td>
                     </tr>
                     <tr>
@@ -67,16 +71,39 @@
                         <td>Parcela Decimo terceiro</td>
                         <td>30/11/2024</td>
                         <td>30/12/2024</td>
-                        <td>Primeira parcela do decimo terceiro salario</td>
+                        <td>Emprestimo para o Pedro(Calote)</td>
                         <td>1500.00</td>
                         <td>
-                            <button id='editar'>Editar</button>
-                            <button id='excluir'>Excluir</button>
+                            <img src="/img/icon-acoes.png" class="IconMenuAcoes" onclick="toggleSubmenu(event)">
+                            <ul class="subMenuAcoes" style="display: none;">
+                                <button>Lançar Movimentação</button>
+                                <button id='editarContaPagar'>Editar</button>
+                                <button id='excluirContaPagar'>Excluir</button>
+                            </ul>
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+    <script>
+        // Função para alternar a exibição do submenu
+    function toggleSubmenu(event, idContasPagar) {
+    event.stopPropagation();  // Impede que o clique no submenu feche o submenu imediatamente
+    const submenu = event.target.nextElementSibling;  // O próximo elemento após a imagem é o submenu
+
+    // Fecha todos os submenus antes de abrir o submenu clicado
+    const allSubmenus = document.querySelectorAll('.submenu');
+    allSubmenus.forEach(sub => {
+        if (sub !== submenu) {
+            sub.style.display = 'none';  // Fecha todos os outros submenus
+        }
+    });
+
+    // Alterna a visibilidade do submenu clicado
+    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    </script>
 </body>
 </html>
