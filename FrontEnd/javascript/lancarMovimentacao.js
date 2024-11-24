@@ -81,12 +81,6 @@ async function lancarMovimentacao(event) {
     const tipo = document.getElementById('tipoLancamentoConta').value;
     const descricao = document.getElementById('descricaoLancamentoConta').value;
 
-    if(valorDaConta < valor){
-        console.log(valorDaConta);
-        console.log(valor);
-        alert('Valor lançado maior que o valor da conta');
-    }
-    else{
     // Criar o objeto de dados a ser enviado para a API
     const movimentacao = {
         idMovimentacaoContaPagar: 0,
@@ -119,6 +113,6 @@ async function lancarMovimentacao(event) {
         console.error('Erro:', error);
         alert('Ocorreu um erro ao tentar lançar a movimentação.');
     }
-}
+
 }
 
