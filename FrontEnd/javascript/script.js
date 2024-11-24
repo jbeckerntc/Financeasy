@@ -21,7 +21,7 @@ async function baixarRelatorio() {
         const data = await response.json();
 
         // Verifica se a resposta contém o array de valores
-        const contas = data.$values;
+        const contas = data;
 
         // Se não encontrar dados, exibe um alerta
         if (!contas || contas.length === 0) {

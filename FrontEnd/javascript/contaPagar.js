@@ -11,7 +11,7 @@ async function getContasPagar() {
         contasPagarTable.innerHTML = ''; 
 
         // Verifique se "contas" é um array e então itere sobre ele
-        data.$values.forEach(conta => {
+        data.forEach(conta => {
             // Formatar as datas
             const dataAbertura = conta.dataAbertura ? new Date(conta.dataAbertura).toLocaleDateString('pt-BR') : 'Data não disponível';
             const dataVencimento = conta.dataVencimento ? new Date(conta.dataVencimento).toLocaleDateString('pt-BR') : 'Data não disponível';
@@ -19,11 +19,10 @@ async function getContasPagar() {
             // Formatar o valor com 2 casas decimais
             const valor = conta.valor ? conta.valor.toFixed(2).replace('.', ',') : '0,00';
 
-            // Inicializando o saldo da conta
             let saldo = conta.valor || 0;
 
             // Iterando sobre as movimentações e calculando o saldo
-            conta.movimentacoes.$values.forEach(movimentacao => {
+            conta.movimentacoes.forEach(movimentacao => {
                 const valorMovimentacao = movimentacao.valor || 0;
                 if (movimentacao.idTipoMovimentacao === 1) {
                     // Débito: subtrai do saldo
@@ -51,7 +50,7 @@ async function getContasPagar() {
                     <img src="/img/icon-acoes.png" class="IconMenuAcoes" onclick="toggleSubmenu(event, ${conta.idContasPagar})">
                     <ul class="subMenuAcoes" style="display: none;">
                         <button onclick="lancarMovimentacao(${conta.idContasPagar})">Lançar Movimentação</button>
-                        <button id='editarContaPagar' onclick="editarContaPagar(${conta.idContasPagar}, '${conta.numero}', '${dataAbertura}', '${dataVencimento}', '${conta.descricao}', ${conta.valor},${conta.categoria})">Editar</button>
+                        <button id='editarContaPagar' onclick="editarContaPagar(${conta.idContasPagar}, '${conta.numero}', '${dataAbertura}', '${dataVencimento}', '${conta.descricao}', ${conta.valor},${conta.categoriaDocumento.idCategoriaDocumento})">Editar</button>
                         <button id='excluirContaPagar' onclick="excluirContaPagar(${conta.idContasPagar})">Excluir</button>
                     </ul>
                 </td>
@@ -138,4 +137,9 @@ function editarContaPagar(idContasPagar, numero, dataAbertura, dataVencimento, d
 
     // Redireciona para a página de edição
     window.location.href = '/html/cadastroContaPagar.html';
+}
+
+function lancarMovimentacao(idContasPagar){
+    localStorage.setItem('contaPagarId', idContasPagar);
+    window.location.href = '/html/lancarMovimentacao.html';
 }

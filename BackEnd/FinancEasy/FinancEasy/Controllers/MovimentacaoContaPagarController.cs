@@ -43,7 +43,7 @@ namespace FinancEasy.Controllers
             _banco.MovimentacaoContaPagar.Add(movimentacaoNova);
             _banco.SaveChanges();
 
-            return Ok();
+            return Ok(new { mensagem = $"Movimentação {MovimentacaoContaPagarDTO.IdMovimentacaoContaPagar} lançada com sucesso" });
         }
 
     }

@@ -9,7 +9,7 @@ async function getContasBancarias() {
 
         console.log(data);
 
-        data.$values.forEach(conta => {  
+        data.forEach(conta => {  
             const row = document.createElement('tr'); 
             row.innerHTML = `
                 <td>${conta.nome}</td>
